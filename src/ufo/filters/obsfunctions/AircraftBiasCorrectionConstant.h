@@ -15,20 +15,20 @@
 #include "ufo/filters/obsfunctions/ObsFunctionBase.h"
 #include "ufo/filters/Variables.h"
 
-//BTH//namespace ufo {
+namespace ufo {
 //BTH//
 ///
 /// \brief An optional parameter to override the source of HofX wind components,
 ///        and an optional parameter for minimum wind components (default=0.5 m/s).
 ///
-//BTH//class WindDirAngleDiffParameters : public oops::Parameters {
-//BTH//  OOPS_CONCRETE_PARAMETERS(WindDirAngleDiffParameters, Parameters)
+class AircraftBiasCorrectionConstantParameters : public oops::Parameters {
+  OOPS_CONCRETE_PARAMETERS(AircraftBiasCorrectionConstantParameters, Parameters)
 //BTH//
 //BTH// public:
 //BTH//  /// Name of the HofX group used to replace the default group (default is HofX)
 //BTH//  oops::Parameter<std::string> test_hofx{"test_hofx", "HofX", this};
 //BTH//  oops::Parameter<float> minimum_uv{"minimum_uv", 0.5, this};
-//BTH//};
+};
 
 // -----------------------------------------------------------------------------
 
