@@ -60,7 +60,7 @@ void AircraftBiasCorrectionConstant::compute(const ObsFilterData & in,
   //BTH//const float min_uv = std::max(0.0001f, options_.minimum_uv.value());
 
   // Retrieve observation aircraft bias correction constant coefficient
-  std::vector<float> BCcoeff
+  std::vector<float> BCcoeff;
   in.get(Variable("BiasCoefficientValue/constantPredictor"), BCcoeff);
   // Retrieve Model HofX wind components
   //BTH//std::string test_hofx = options_.test_hofx.value();
