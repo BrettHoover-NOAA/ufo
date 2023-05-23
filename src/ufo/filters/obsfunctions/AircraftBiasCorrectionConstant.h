@@ -61,7 +61,7 @@ class AircraftBiasCorrectionConstant : public ObsFunctionBase<float> {
   const ufo::Variables & requiredVariables() const;
  private:
   ufo::Variables invars_;
-  //BTH//AircraftBiasCorrectionConstantParameters options_;
+  AircraftBiasCorrectionConstantParameters options_;
 };
 
 // -----------------------------------------------------------------------------
