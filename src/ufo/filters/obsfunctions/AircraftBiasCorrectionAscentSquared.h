@@ -62,7 +62,7 @@ class AircraftBiasCorrectionAscentSquared : public ObsFunctionBase<float> {
   const ufo::Variables & requiredVariables() const;
  private:
   ufo::Variables invars_;
-  AircraftBiasCorrectionAscentSquared options_;
+  AircraftBiasCorrectionAscentSquaredParameters options_;
 };
 
 // -----------------------------------------------------------------------------
