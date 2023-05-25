@@ -73,7 +73,7 @@ void AircraftBiasCorrectionAscent::compute(const ObsFilterData & in,
   //BTH//in.get(Variable(test_hofx + "/windNorthward"), vm);
 
   for (size_t jj = 0; jj < nlocs; ++jj) {
-    if (BCcoeff[jj] != missing & BCpredi[jj] != missing) {
+    if (BCcoeff[jj] != missing && BCpredi[jj] != missing) {
       // ascent predictor = BCpredi*BCcoeff
       out[0][jj] = BCpredi[jj]*BCcoeff[jj];
     } else {

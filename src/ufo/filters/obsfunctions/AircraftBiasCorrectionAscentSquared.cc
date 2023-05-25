@@ -74,7 +74,7 @@ void AircraftBiasCorrectionAscentSquared::compute(const ObsFilterData & in,
   // Define a BCprediSquared variable
   float BCprediSquared;
   for (size_t jj = 0; jj < nlocs; ++jj) {
-    if (BCcoeff[jj] != missing & BCpredi[jj] != missing) {
+    if (BCcoeff[jj] != missing && BCpredi[jj] != missing) {
       // ascent predictor = BCprediSquared*BCcoeff
       BCprediSquared = BCpredi[jj]*BCpredi[jj];
       out[0][jj] = BCprediSquared*BCcoeff[jj];
