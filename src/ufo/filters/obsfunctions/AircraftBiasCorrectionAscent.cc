@@ -62,7 +62,7 @@ void AircraftBiasCorrectionAscent::compute(const ObsFilterData & in,
 
   // Retrieve observation aircraft bias correction constant coefficient
   std::vector<float> BCcoeff;
-  in.get(Variable("BiasCoefficientValue/constantPredictor"), BCcoeff);
+  in.get(Variable("BiasCoefficientValue/ascentPredictor"), BCcoeff);
   // Retrieve observation aircraft ascent rate
   std::vector<float> BCpredi;
   in.get(Variable("MetaData/windUpward"), BCpredi);
