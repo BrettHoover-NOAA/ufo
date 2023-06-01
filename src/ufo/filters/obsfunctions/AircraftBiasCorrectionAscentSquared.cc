@@ -71,13 +71,19 @@ void AircraftBiasCorrectionAscentSquared::compute(const ObsFilterData & in,
   //BTH//std::vector<float> um, vm;
   //BTH//in.get(Variable(test_hofx + "/windEastward"), um);
   //BTH//in.get(Variable(test_hofx + "/windNorthward"), vm);
-  // Define a BCprediSquared variable
-  float BCprediSquared;
+  // Define a BCprediValue variable
+  float BCprediValue;
   for (size_t jj = 0; jj < nlocs; ++jj) {
     if (BCcoeff[jj] != missing && BCpredi[jj] != missing) {
-      // ascent predictor = BCprediSquared*BCcoeff
-      BCprediSquared = BCpredi[jj]*BCpredi[jj];
-      out[0][jj] = BCprediSquared*BCcoeff[jj];
+      // ascent predictor = BCprediValue*BCcoeff
+      // To match GSI's predictor value, if the ascent value
+      // abs(BCpredi) >= 30., the value is set to 30.
+      if (abs(BCpredi[jj]) >= 30.) {
+        BCprediValue = 30.*30.;
+    } else {
+        BCprediValue = BCpredi[jj]*BCpredi[jj];
+    }
+      out[0][jj] = BCprediValue*BCcoeff[jj];
     } else {
       out[0][jj] = missing;
     }
