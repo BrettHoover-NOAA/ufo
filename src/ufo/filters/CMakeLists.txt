@@ -165,12 +165,8 @@ set ( filters_files
       actions/RejectObs.h
       actions/SetFlag.cc
       actions/SetFlag.h
-      obsfunctions/AircraftBiasCorrectionConstant.cc
-      obsfunctions/AircraftBiasCorrectionConstant.h
-      obsfunctions/AircraftBiasCorrectionAscent.cc
-      obsfunctions/AircraftBiasCorrectionAscent.h
-      obsfunctions/AircraftBiasCorrectionAscentSquared.cc
-      obsfunctions/AircraftBiasCorrectionAscentSquared.h
+      obsfunctions/AircraftBiasCorrectionTerm.cc
+      obsfunctions/AircraftBiasCorrectionTerm.h
       obsfunctions/AverageTemperatureBelow.cc
       obsfunctions/AverageTemperatureBelow.h
       obsfunctions/BennartzScatIndex.cc
