@@ -31,16 +31,16 @@ AircraftBiasCorrectionTerm::AircraftBiasCorrectionTerm(const eckit::LocalConfigu
   options_.deserialize(conf);
   // We need to retrieve the aircraft bias correction coefficient
   // Draw variable from group/name supplied as an option
-  std::string coeff_grpvarname = options_.coeff_grpvarname.value();
+  const std::string &coeff_grpvarname = options_.coeff_grpvarname.value();
   invars_ += Variable(coeff_grpvarname);
   // We need to retrieve the aircraft bias correction predictor
   // Draw variable from group/name supplied as an option
-  std::string predi_grpvarname = options_.predi_grpvarname.value();
+  const std::string &predi_grpvarname = options_.predi_grpvarname.value();
   invars_ += Variable(predi_grpvarname);
   // We need to retrieve the order to which the predictor is to be raised
   // (e.g., 1. for a 1st order predictor, 2. for a squared predictor, etc)
   // Supplied as an option
-  std:: string predi_order = options_.predi_order.value();
+  const std:: string &predi_order = options_.predi_order.value();
   invars_ += Variable(predi_order)
 }
 
