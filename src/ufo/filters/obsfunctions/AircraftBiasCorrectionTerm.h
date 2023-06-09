@@ -11,7 +11,7 @@
 #include <string>
 
 #include "oops/util/parameters/Parameter.h"
-
+#include "oops/util/parameters/RequiredParameters.h"
 #include "ufo/filters/obsfunctions/ObsFunctionBase.h"
 #include "ufo/filters/Variables.h"
 
@@ -32,7 +32,7 @@ class AircraftBiasCorrectionTermParameters : public oops::Parameters {
   // <Group>/<Variable> of BC predictor
   oops::RequiredParameter<std::string> predi_grpvarname{"predi_grpvarname", this};
   // Order to which BC predictor is raised
-  oops::RequiredParameter<std::float> predi_order{"predi_order", this};
+  oops::RequiredParameter<float> predi_order{"predi_order", this};
 };
 
 // -----------------------------------------------------------------------------

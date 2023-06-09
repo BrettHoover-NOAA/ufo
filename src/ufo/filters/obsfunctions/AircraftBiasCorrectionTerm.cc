@@ -39,9 +39,7 @@ AircraftBiasCorrectionTerm::AircraftBiasCorrectionTerm(const eckit::LocalConfigu
   invars_ += Variable(predi_grpvarname);
   // We need to retrieve the order to which the predictor is to be raised
   // (e.g., 1. for a 1st order predictor, 2. for a squared predictor, etc)
-  // Supplied as an option
-  const std:: string predi_order = options_.predi_order.value();
-  invars_ += Variable(predi_order)
+  // Supplied as an option, drawn directly from options_ below
 }
 
 // -----------------------------------------------------------------------------
@@ -64,8 +62,8 @@ void AircraftBiasCorrectionTerm::compute(const ObsFilterData & in,
   std::vector<float> BCpredi;
   const std::string &predi_grpvarname = options_.predi_grpvarname.value();
   in.get(Variable(predi_grpvarname), BCpredi);
-  // Retrieve predictor's order
-  const float &ORDpredi = options_.predi_order.value();
+  // Retrieve predictor's order from options_
+  const float ORDpredi = options_.predi_order.value();
 
   for (size_t jj = 0; jj < nlocs; ++jj) {
     if (BCcoeff[jj] != missing && BCpredi[jj] != missing) {
