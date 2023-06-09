@@ -11,7 +11,7 @@
 #include <string>
 
 #include "oops/util/parameters/Parameter.h"
-#include "oops/util/parameters/RequiredParameters.h"
+#include "oops/util/parameters/RequiredParameter.h"
 #include "ufo/filters/obsfunctions/ObsFunctionBase.h"
 #include "ufo/filters/Variables.h"
 
