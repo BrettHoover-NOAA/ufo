@@ -50,10 +50,10 @@ class AircraftBiasCorrectionTermParameters : public oops::Parameters {
 ///       filter variables:
 ///       - name: airTemperature
 ///       assignments:
-///       - name: BiasCorrectionPredictor/ascentPredictor
+///       - name: BiasCorrectionTerm/ascentPredictor
 ///         type: float
 ///       function:
-///       - name: ObsFunction/AircraftBiasCorrectionTerm
+///         name: ObsFunction/AircraftBiasCorrectionTerm
 ///         options:
 ///           coeff_grpvarname: BiasCorrectionCoefficient/ascentPredictor
 ///           predi_grpvarname: MetaData/windUpward
